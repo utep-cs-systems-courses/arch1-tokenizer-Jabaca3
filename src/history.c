@@ -19,11 +19,11 @@ void add_history(List* list, char* str){
     list->root->next = NULL;
   }
   else {
+    id++;
     while(node->next != NULL) {
       node = node->next;
       id++;
     }
-    id++;
     node->next = (Item*) malloc(sizeof (Item));
     node->next->id = id;
     node->next->str = str;
