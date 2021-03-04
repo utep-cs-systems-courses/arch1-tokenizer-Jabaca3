@@ -1,12 +1,23 @@
 Project 1: Tokenizer
 ====================
-# Instructions:
+# Tokenizer
 
-You should document your tokenizer in this file.
+Tokenizer is a C written tokenizing algorithm that takes in strings and seperetates the words into an array, Tokenizer also keeps track of history and can free it at any point in the program.
 
-This file is written in the refreshingly simple `markdown` text
-formatting language.
+##Usage:
+To run the program use the command in the terminal ./UI_Main after compiling.
+the user will be prompted to write a string of choice.
+To call back memory use the !<int> command to trace back to your furthest input
 
-To learn about text formatting using markdown, we encourage you to examine 
- - [../README.md](../README.md)
- - the online [Markdown Guide](https://www.markdownguide.org/).
+##Examples of tokenizing strings:
+-----------
+![Capture](https://user-images.githubusercontent.com/43182765/110042147-93528f00-7d02-11eb-8244-0e9e06a8ecb6.PNG)
+
+
+Here you can see strings being tokenized of whichever lenght
+
+##Examples of recalling history:
+-------------
+![Capture](https://user-images.githubusercontent.com/43182765/110042458-0a882300-7d03-11eb-8871-9cec244d3e36.PNG)
+
+Here you can see user accessing old inputs
