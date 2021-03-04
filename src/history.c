@@ -18,12 +18,12 @@ void add_history(List* list, char* str){
     list->root->str = str;
     list->root->next = NULL;
   }
-  else{ 
-    id++;
+  else {
     while(node->next != NULL) {
       node = node->next;
       id++;
     }
+    id++;
     node->next = (Item*) malloc(sizeof (Item));
     node->next->id = id;
     node->next->str = str;
@@ -33,13 +33,14 @@ void add_history(List* list, char* str){
 
 char* get_history(List* list, int id){
   Item *node = list->root;
-  while(node != NULL) {
+
+  while(node != NULL){
     if (node->id == id) {
       return node->str;
     }
     node = node->next;
   }
-  return "\nError no result\n";
+  return "Error";
 }
 
 void print_history(List* list){

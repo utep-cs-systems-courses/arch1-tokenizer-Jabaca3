@@ -100,10 +100,12 @@ void print_tokens(char **tokens){
 }
 
 void free_tokens(char ** tokens){
-  for (char *c =*tokens; c; c=*tokens++){
-    free(c);
-    free(tokens);
+  int i =0;
+  while(i<=word_count+1){
+    free(tokens[i]);
+    i++;
   }
+  free(tokens);
 }
 
 
