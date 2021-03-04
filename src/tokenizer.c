@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "tokenizer.h"
 #include <string.h>
+
 /* Return true (non-zero) if c is a whitespace characer
    ('\t' or ' ').  
    Zero terminators are not printable (therefore false) */
@@ -41,9 +42,10 @@ char *word_terminator(char *word){
   return word+i;
 }
 
+int word_count;
 int count_words(char *str){
-  int word_count =0;
   int i =0;
+  word_count=0;
   while(str[i] != '\0'){
     while(space_char(*(str+i))){
       i++;
@@ -85,15 +87,22 @@ char **tokenize(char* str){
     word_holder = word_start(end_of_word);
     i++;
   }
-  tokens[i] = (char*)0;
+  tokens[i] = NULL;
   return tokens;
 }
 
 void print_tokens(char **tokens){
   int i=0;
-  while (tokens[i] != (char*)0){
-    printf("%s, %i\n", tokens[i], strlen(tokens[i]));
+  while (i < word_count){
+    printf("%s\n", tokens[i]);
     i++;
+  }
+}
+
+void free_tokens(char ** tokens){
+  for (char *c =*tokens; c; c=*tokens++){
+    free(c);
+    free(tokens);
   }
 }
 
